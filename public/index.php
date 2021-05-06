@@ -9,22 +9,21 @@
     require_once 'vendor/autoload.php';
 
     $availableRoutes=[
-    '/laravel6/public/',
-    '/laravel7/public/',
-    '/laravel8/public/',
-    '/codeigniter3/public/',
-    '/codeigniter4/public/',
-    '/phalcon4/public/'
+        '/laravel6/public/',
+        '/laravel7/public/',
+        '/laravel8/public/',
+        '/codeigniter3/public/',
+        '/codeigniter4/public/',
+        '/phalcon4/public/'
     ];
 
     $route = $_SERVER['REQUEST_URI'];
-    $host=$_SERVER['HTTP_HOST'];
-    $https=$_SERVER['HTTPS'];
-    $location = (isset($https) && $https === 'on' ? "https" : "http") . "://$host$route";
+    $host=$_SERVER["SERVER_ADDR"];
+    $location = "http://$host$route";
 
     if ( in_array( $route, $availableRoutes ) )
     {
-        header("Location: $location");
+        header("Location: $location"."index.php");
         die;
     }
 

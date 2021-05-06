@@ -18,10 +18,13 @@
     ];
 
     $route = $_SERVER['REQUEST_URI'];
+    $host=$_SERVER['HTTP_HOST'];
+    $https=$_SERVER['HTTPS'];
+    $location = (isset($https) && $https === 'on' ? "https" : "http") . "://$host$route";
 
     if ( in_array( $route, $availableRoutes ) )
     {
-        header("Location: https://127.0.0.1:9090$route");
+        header("Location: $location");
         die;
     }
 

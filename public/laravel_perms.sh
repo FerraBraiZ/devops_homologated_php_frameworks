@@ -1,6 +1,6 @@
-#! /bin/bash -xe
+#!/bin/bash
+
 setfacl -R -m u:nginx:rwX  /var/www/public/laravel*/bootstrap/cache
-touch /var/www/public/laravel*/storage/logs/laravel.log
 setfacl -R -m u:nginx:rwX /var/www/public/laravel*/storage/logs /var/www/public/laravel*/storage/framework
 setfacl -Rm u:nginx:rwx /var/www/public/laravel*/bootstrap/cache /var/www/public/laravel*/storage
 

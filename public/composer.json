@@ -1,0 +1,13 @@
+{
+    "require": {
+        "aws/aws-sdk-php": "^3.69"
+    },
+    "autoload": {
+      "psr-4": {
+        "GoldenAmi\\": ".",
+        "GoldenAmi\\Config\\": "Config",
+        "GoldenAmi\\Controllers\\": "Controllers"
+
+      }
+    }
+}

@@ -1,5 +1,4 @@
-# devops_homologated_php_frameworks
-
+# Frameworks PHP homologados
 
 > Estrutura de pastas e arquivos contendo varios frameworks em PHP homologados para rodar na golden AMI: 
  1) Laravel versões 6,7 e 8. https://laravel.com/

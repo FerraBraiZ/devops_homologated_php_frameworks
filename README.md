@@ -6,8 +6,6 @@
  3) PhalconPHP versão 4 https://phalcon.io/en-us
  4) PHP puro OOP https://www.php.net/
  
-## DevOps
-
 ### Autores
 
 | Nome                  | Github User                     | Responsabilidade    | 

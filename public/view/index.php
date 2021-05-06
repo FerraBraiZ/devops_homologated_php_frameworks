@@ -60,7 +60,7 @@
                         <a href="/laravel8/public/">Laravel 8</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="/codeigniter3/public/">CodeIgniter 3</a>
+                        <a href="/codeigniter3/">CodeIgniter 3</a>
                     </li>
                     <li class="list-group-item">
                         <a href="/codeigniter4/public/">CodeIgniter 4</a>

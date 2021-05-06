@@ -13,3 +13,5 @@ setfacl -Rn -m u:nginx:rwX /var/www/public/laravel*/bootstrap/cache
 setfacl -Rn -m u:nginx:rwX /var/www/public/laravel*/storage/framework
 setfacl -Rn -m u:nginx:rwX /var/www/public/laravel*/storage/logs
 
+
+

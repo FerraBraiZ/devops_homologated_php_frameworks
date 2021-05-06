@@ -12,7 +12,7 @@
         '/laravel6/public/',
         '/laravel7/public/',
         '/laravel8/public/',
-        '/codeigniter3/public/',
+        '/codeigniter3/',
         '/codeigniter4/public/',
         '/phalcon4/public/'
     ];

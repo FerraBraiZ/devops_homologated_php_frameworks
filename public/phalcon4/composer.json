@@ -1,0 +1,27 @@
+{
+  "require": {
+    "vlucas/phpdotenv": "^2.5",
+    "aws/aws-sdk-php": "^3.69",
+    "overtrue/socialite": "^2.0",
+    "ext-json": "*"
+  },
+  "config" : {
+    "vendor-dir" : "vendor"
+  },
+  "require-dev": {
+  },
+  "autoload":{
+    "psr-4":{
+    },
+    "classmap":[
+
+    ],
+    "files":[
+      "tests/autoload_test.php",
+      "tests/pdo_mysql_test.php"
+    ]
+
+  },
+  "name": "madeiramadeira/phalcon4",
+  "description": "meh"
+}

@@ -17,7 +17,7 @@ use Dotenv\Dotenv;
     }
     require_once '../vendor/autoload.php';
 
-    $env = (new Dotenv('../environment/development.env', '.env'))->load();
+    $env = (new Dotenv('../environment/', 'development.env'))->load();
 
     echo "<pre>";
     print_r($env);

@@ -21,19 +21,16 @@ use Dotenv\Dotenv;
         throw new Error("Failed to load environment file:development.env'");
     }
 
+    /**
+     * The FactoryDefault Dependency Injector automatically registers
+     * the services that provide a full stack framework.
+     */
+    $dic = new container();
+
     echo "<pre>";
-    print_r($env);
+    print_r($dic);
     echo "</pre>";
 
-
-
-//
-//    /**
-//     * The FactoryDefault Dependency Injector automatically registers
-//     * the services that provide a full stack framework.
-//     */
-//    $dic = new container();
-//
 //    /**
 //     * Handle routes
 //     */

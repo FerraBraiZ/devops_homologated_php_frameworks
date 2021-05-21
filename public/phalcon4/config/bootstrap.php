@@ -6,16 +6,20 @@ ini_set('display_errors', 'On');
 error_reporting(E_ALL);
 date_default_timezone_set('America/Sao_Paulo');
 setlocale(LC_ALL, 'ptb', 'portuguese-brazil', 'pt-br', 'bra', 'brazil');
+defined('BASE_PATH') || define('BASE_PATH', dirname(__DIR__));
+defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
 
 use Phalcon\Di\FactoryDefault as container;
 use \Phalcon\Mvc\Application;
 use Dotenv\Dotenv;
 
 
+
     if (!file_exists('../vendor/autoload.php')) {
         throw new Error("Failed to load composer's vendor autoload");
     }
     require_once '../vendor/autoload.php';
+
 
     if ( empty( $env=(new Dotenv('../environment/', 'development.env'))->load()) ){
         throw new Error("Failed to load environment file:development.env'");
@@ -27,21 +31,18 @@ use Dotenv\Dotenv;
      */
     $dic = new container();
 
-    echo "<pre>";
-    print_r( dirname(__DIR__) );
-//    //print_r($dic);
+//    echo "<pre>";
+//    print_r( dirname(__DIR__) );
+//    print_r($dic);
 //    echo "</pre>";
 
     /**
      * Handle routes
      */
-    if ( file_exists(dirname(__DIR__).'/config/router.php') ){
-
-        echo "file exists";
-        #throw new Error("Failed to include router.php");
+    if ( !file_exists(BASE_PATH.'/config/router.php') ){
+        throw new Error("Failed to include router.php");
     }
-        echo "nah!";
-//    require_once dirname(__DIR__).'router.php';
+    require_once BASE_PATH.'/config/router.php';
 //
 //    /**
 //     * Read services

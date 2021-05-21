@@ -1,5 +1,12 @@
 <?php
 
+ini_set('ignore_repeated_errors', 'On');
+ini_set('html_errors', 'On');
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+date_default_timezone_set('America/Sao_Paulo');
+setlocale(LC_ALL, 'ptb', 'portuguese-brazil', 'pt-br', 'bra', 'brazil');
+
 use Phalcon\Mvc\Router;
 
 try {

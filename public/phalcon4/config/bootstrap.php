@@ -28,16 +28,17 @@ use Dotenv\Dotenv;
     $dic = new container();
 
     echo "<pre>";
+    print_r( dirname(__DIR__) );
     print_r($dic);
     echo "</pre>";
 
-//    /**
-//     * Handle routes
-//     */
-//    if (!file_exists('router.php')) {
-//        throw new Error("Failed to include router.php");
-//    }
-//    require_once 'router.php';
+    /**
+     * Handle routes
+     */
+    if (!file_exists('router.php')) {
+        throw new Error("Failed to include router.php");
+    }
+    require_once 'router.php';
 //
 //    /**
 //     * Read services

@@ -17,11 +17,15 @@ use Dotenv\Dotenv;
     }
     require_once '../vendor/autoload.php';
 
-    $env = (new Dotenv('../environment/', 'development.env'))->load();
+    if ( empty( $env=(new Dotenv('../environment/', 'development.env'))->load()) ){
+        throw new Error("Failed to load environment file:development.env'");
+    }
 
     echo "<pre>";
     print_r($env);
     echo "</pre>";
+
+
 
 //
 //    /**

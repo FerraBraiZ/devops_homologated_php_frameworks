@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+namespace Phalcon4\Config;
 
 ini_set('ignore_repeated_errors', 'On');
 ini_set('html_errors', 'On');

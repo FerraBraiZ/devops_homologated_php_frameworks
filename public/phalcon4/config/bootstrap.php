@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+namespace Phalcon4\Config;
+
 ini_set('ignore_repeated_errors', 'On');
 ini_set('html_errors', 'On');
 ini_set('display_errors', 'On');
@@ -9,7 +11,7 @@ setlocale(LC_ALL, 'ptb', 'portuguese-brazil', 'pt-br', 'bra', 'brazil');
 defined('BASE_PATH') || define('BASE_PATH', dirname(__DIR__));
 defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
 
-use Phalcon\Di\FactoryDefault as container;
+
 use \Phalcon\Mvc\Application;
 
 if (!file_exists('../vendor/autoload.php')) {
@@ -26,11 +28,7 @@ if ( !file_exists(BASE_PATH.'/config/environment.php') ) {
 }
 require_once BASE_PATH.'/config/environment.php';
 
-/**
- * The FactoryDefault Dependency Injector automatically registers
- * the services that provide a full stack framework.
- */
-$dic = new container();
+
 
 /**
  * Handle routes
@@ -48,10 +46,15 @@ if ( !file_exists(BASE_PATH.'/config/services.php') ) {
 }
 require_once BASE_PATH.'/config/services.php';
 
+
+if(!isset($container)){
+    throw new Error("Failed to contruct or include the dic conteiner from services.php");
+}
+
 /**
  * Get config service for use in inline setup below
  */
-$config = $dic->getConfig();
+$config = $container->getConfig();
 
 /**
  * Include Autoloader
@@ -66,7 +69,7 @@ try {
     /**
      * Handle the request
      */
-    $application = new Application($dic);
+    $application = new Application($container);
 
     echo $application->handle()->getContent();
 

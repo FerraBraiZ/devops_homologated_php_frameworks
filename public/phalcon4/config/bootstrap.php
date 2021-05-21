@@ -27,10 +27,10 @@ use Dotenv\Dotenv;
      */
     $dic = new container();
 
-    echo "<pre>";
-    print_r( dirname(__DIR__) );
-    print_r($dic);
-    echo "</pre>";
+//    echo "<pre>";
+//    print_r( dirname(__DIR__) );
+//    //print_r($dic);
+//    echo "</pre>";
 
     /**
      * Handle routes

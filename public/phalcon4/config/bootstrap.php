@@ -7,30 +7,21 @@ error_reporting(E_ALL);
 date_default_timezone_set('America/Sao_Paulo');
 setlocale(LC_ALL, 'ptb', 'portuguese-brazil', 'pt-br', 'bra', 'brazil');
 
-
-defined('BASE_PATH') || define('BASE_PATH', dirname(__DIR__));
-defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
-
 use Phalcon\Di\FactoryDefault as container;
 use \Phalcon\Mvc\Application;
+use Dotenv\Dotenv;
 
 
     if (!file_exists('../vendor/autoload.php')) {
         throw new Error("Failed to load composer's vendor autoload");
     }
-
     require_once '../vendor/autoload.php';
 
+    $env = (new Dotenv('../environment/development.env', '.env'))->load();
 
-    /**
-     * Include Environment
-     */
-
-    if (!file_exists('environment.php')) {
-        throw new Error("Failed to include environment.php");
-    }
-
-    require_once 'environment.php';
+    echo "<pre>";
+    print_r($env);
+    echo "</pre>";
 
 //
 //    /**

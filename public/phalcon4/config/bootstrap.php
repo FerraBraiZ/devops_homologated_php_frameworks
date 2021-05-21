@@ -35,11 +35,12 @@ use Dotenv\Dotenv;
     /**
      * Handle routes
      */
-    if ( file_exists(dirname(__DIR__).'router.php') ){
+    if ( file_exists(dirname(__DIR__).'/config/router.php') ){
 
         echo "file exists";
         #throw new Error("Failed to include router.php");
     }
+        echo "nah!";
 //    require_once dirname(__DIR__).'router.php';
 //
 //    /**

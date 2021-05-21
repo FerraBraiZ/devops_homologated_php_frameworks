@@ -26,7 +26,12 @@ try {
     /**
      * Include Environment
      */
-    require_once './environment.php';
+
+    if (!file_exists('environment.php')) {
+        throw new Error("Failed to include environment.php");
+    }
+
+    require_once 'environment.php';
 
 
     /**
@@ -38,12 +43,18 @@ try {
     /**
      * Handle routes
      */
-    require_once './router.php';
+    if (!file_exists('router.php')) {
+        throw new Error("Failed to include router.php");
+    }
+    require_once 'router.php';
 
     /**
      * Read services
      */
-    require_once './services.php';
+    if (!file_exists('services.php')) {
+        throw new Error("Failed to include services.php");
+    }
+    require_once 'services.php';
 
     /**
      * Get config service for use in inline setup below
@@ -53,7 +64,10 @@ try {
     /**
      * Include Autoloader
      */
-    require_once './loader.php';
+    if (!file_exists('loader.php')) {
+        throw new Error("Failed to include loader.php");
+    }
+    require_once 'loader.php';
 
     /**
      * Handle the request

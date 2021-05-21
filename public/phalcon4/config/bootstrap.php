@@ -11,7 +11,8 @@ setlocale(LC_ALL, 'ptb', 'portuguese-brazil', 'pt-br', 'bra', 'brazil');
 defined('BASE_PATH') || define('BASE_PATH', dirname(__DIR__));
 defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
 
-use \Phalcon\Mvc\Application;
+use \Phalcon\Mvc\Application as App;
+use Phalcon\Di\FactoryDefault as container;
 
 if (!file_exists('../vendor/autoload.php')) {
     throw new Error("Failed to load composer's vendor autoload");
@@ -26,6 +27,15 @@ if ( !file_exists(BASE_PATH.'/config/environment.php') ) {
     throw new Error("Failed to include environment.php");
 }
 require_once BASE_PATH.'/config/environment.php';
+
+/**
+ * The FactoryDefault Dependency Injector automatically registers
+ * the services that provide a full stack framework.
+ */
+$container = new container();
+if(!isset($container)){
+    throw new Error("Failed to construct the dependency injection conteiner");
+}
 
 /**
  * Handle routes
@@ -44,18 +54,15 @@ if ( !file_exists(BASE_PATH.'/config/services.php') ) {
 require_once BASE_PATH.'/config/services.php';
 
 
-if(!isset($container)){
-    throw new Error("Failed to contruct or include the dic conteiner from services.php");
-}
 
 /**
  * Get config service for use in inline setup below
  */
 $config = $container->getConfig();
 
-echo '<pre>';
-print_r( $config );
-die;
+//echo '<pre>';
+//print_r( $config );
+//die;
 
 /**
  * Include Autoloader
@@ -70,7 +77,7 @@ try {
     /**
      * Handle the request
      */
-    $application = new Application($container);
+    $application = new App($container);
 
     echo $application->handle()->getContent();
 

@@ -20,13 +20,9 @@ use Phalcon\Mvc\Url as UrlResolver;
 use Phalcon\Mvc\View\Engine\Php as PhpEngine;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
-use Phalcon\Di\FactoryDefault as container;
 
-/**
- * The FactoryDefault Dependency Injector automatically registers
- * the services that provide a full stack framework.
- */
-$container = new container();
+
+
 
 /**
  * Shared configuration service

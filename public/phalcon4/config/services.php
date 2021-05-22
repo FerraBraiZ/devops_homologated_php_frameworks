@@ -21,8 +21,7 @@ use Phalcon\Mvc\View\Engine\Php as PhpEngine;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 
-
-
+$container = new Phalcon\Di\FactoryDefault();
 
 /**
  * Shared configuration service

@@ -14,6 +14,10 @@ use \Phalcon\Loader;
 try {
 
     $loader = new Loader();
+    /**
+     * Get config service for use in inline setup below
+     */
+    $config = $container->getConfig();
 
     /**
      * We're a registering a set of directories taken from the configuration file
